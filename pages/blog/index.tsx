@@ -51,7 +51,7 @@ const Blog = ({ posts }: Props) => {
           </InputLeftElement>
           <Input
             onChange={onSearch}
-            placeholder="Search blog posts"
+            placeholder="Rechercher un article..."
             variant="filled"
           />
         </InputGroup>
