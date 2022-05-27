@@ -60,7 +60,7 @@ const Footer = () => {
           {firstGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
               <Link
-                color={pathname === href ? "purple.500" : "gray.500"}
+                color={pathname === href ? "blue.500" : "gray.500"}
                 isExternal={href.startsWith("http")}
               >
                 {label}
@@ -85,7 +85,7 @@ const Footer = () => {
           {thirdGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
               <Link
-                color={pathname === href ? "purple.500" : "gray.500"}
+                color={pathname === href ? "blue.500" : "gray.500"}
                 isExternal={href.startsWith("http")}
               >
                 {label}
@@ -104,7 +104,7 @@ const Footer = () => {
       >
         <Text color="gray.500" fontSize="sm">
           ©{" "}
-          <chakra.span as="time" color="purple.500">
+          <chakra.span as="time" color="blue.500">
             {new Date().getFullYear()}
           </chakra.span>{" "}
           Mohamed LAAJAJ
