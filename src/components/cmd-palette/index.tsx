@@ -181,7 +181,7 @@ const CmdPalette = () => {
                 borderBottomStyle="solid"
                 autoFocus
                 onChange={(e) => filterCommands(e.currentTarget.value)}
-                placeholder="Rechercher une commande (Theme sombre)"
+                placeholder="Rechercher une commande (ex : Theme sombre)"
                 rounded="none"
                 variant="unstyled"
               />
