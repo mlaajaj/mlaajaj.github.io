@@ -32,7 +32,7 @@ const BlogPostCard = ({
       p={4}
       rounded="lg"
       shadow="xl"
-      bg={'#FFFF'}      
+      bg={useColorModeValue('white', 'gray.900')}       
       maxW="2xl"
     >
 
