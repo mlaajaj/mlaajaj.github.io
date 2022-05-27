@@ -8,6 +8,7 @@ import {
   Container,
   LinkOverlay,
   useColorMode,
+  Image
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import { useContext, useEffect, useState } from 'react';
@@ -55,25 +56,32 @@ const Header = () => {
       >
         <NextLink href="/" passHref>
           <Link>
-            <Heading size="sm">../LAAJAJ/Mohamed</Heading>
+          <Image src='/assets/images/mlaajaj.png' alt='Logo'   boxSize='60px' />
           </Link>
         </NextLink>
 
-        <HStack alignItems="center" spacing={{ base: 0, md: 2 }}>
+        <HStack alignItems="center" spacing={{ base: 5, md: 5 }}>
+
+          <NextLink href="/" passHref>
+                <Link>
+                  <Text>Accueil</Text>
+                </Link>
+              </NextLink>
+        
             <NextLink href="/blog" passHref>
               <Link>
                 <Text>Blog</Text>
               </Link>
             </NextLink>
 
-            <NextLink href="../projets" passHref>
+            <NextLink href="/projets" passHref>
               <Link>
                 <Text>Projets</Text>
               </Link>
             </NextLink>
 
 
-          <Tooltip label={`Command Palette (${shortcut})`}>
+          <Tooltip label={`Menu (${shortcut})`}>
             <IconButton
               aria-label="toggle theme"
               icon={<FiCommand />}
