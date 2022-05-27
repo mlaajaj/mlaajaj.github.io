@@ -33,7 +33,7 @@ const BlogpostsSection = ({ posts }: Props) => {
           <Icon
             as={CgArrowRight}
             ml={1}
-            color="purple.500"
+            color="blue.500"
             _groupHover={{ ml: 3 }}
             transitionDuration="slow"
             transitionProperty="margin-left"
