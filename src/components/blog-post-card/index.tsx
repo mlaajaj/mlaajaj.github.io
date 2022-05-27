@@ -18,7 +18,6 @@ const BlogPostCard = ({
   slug,
   date,
   readingTime,
-  img,
 }: BlogPost) => {
   return (
     <Flex
