@@ -26,7 +26,7 @@ const IndexPage = ({ videos, posts }: Props) => {
       <Hero />
       <Divider orientation='horizontal' />
       <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
-        <Heading size="md">Projets</Heading>
+        <Heading as="h1" size="lg">Projets</Heading>
         <Text>
           Vous retrouverez l'ensemble de mes projets avec Python, Tableau, SQL...
         </Text>
@@ -36,6 +36,7 @@ const IndexPage = ({ videos, posts }: Props) => {
             <Song key={data.id} {...data} />
         ))}
         </SimpleGrid>
+        <Divider orientation='horizontal' />
       <BlogpostsSection posts={posts} />
     </>
   );
