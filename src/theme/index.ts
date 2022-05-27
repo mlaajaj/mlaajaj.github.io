@@ -8,14 +8,14 @@ const config: ThemeConfig = {
 
 const purpleRing = (props) => ({
   _focus: {
-    ringColor: mode('purple.300', 'purple.600')(props),
+    ringColor: mode('blue.300', 'blue.600')(props),
     ring: 3,
   },
 });
 
 const inputBorder = (props) => ({
   _focus: {
-    borderColor: mode('purple.300', 'purple.600')(props),
+    borderColor: mode('blue.300', 'blue.600')(props),
   },
 });
 
