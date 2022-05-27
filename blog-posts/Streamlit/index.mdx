@@ -1,0 +1,141 @@
+---
+title: Streamlit 
+description: How to create and use API Routes in Next.js
+date: 25 Mai 2022
+---
+
+
+<img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" alt="alt text" title="image Title" />
+
+
+Cet article détaille les étapes de création d'une application avec Streamlit depuis la récupération des données jusqu'au déploiement. 
+
+## Streamlit ? 
+
+[Streamlit](https://streamlit.io) est un framework open-source Python conçu pour créer des web applications en quelques minutes. La particuliratié de cet outil est qu'il permet de créer des "data apps" sans connaissances prélables en front-end. 
+
+> [Snowflake a recemment annoncé l’acquisition de Streamlit pour 800 millions de dollars](https://www.informatiquenews.fr/snowflake-annonce-lacquisition-de-streamlit-86161)
+
+
+
+## Organisation du projet  
+
+Le projet se déroule via 4 étapes :
+1. Récupération des données
+2. Traitement et modélisation 
+3. Utilisation de l'API Streamlit pour créer notre Web App
+4. Déploiement 
+
+
+## Les données   
+J'ai choisi de scrapper les données de test des smartphones du site [Notebookcheck]('https://www.notebookcheck.net').
+Pour chaque test de smartphone, les éléments suivants ont été rédupérées:
+- Marque du smartphone
+- Modele
+- L'ensmble des notes par catégorie (Performance, Batterie, Ecran...)
+- Informations techniques (processeur, le gpu, mémoire ram)
+- Le prix 
+- La date de publication
+
+Pour plus d'informations sur la récupération des données :  [Voir le Projet](https://github.com/mlaajaj/PortfolioProjects/blob/main/Smartphones_scrap.ipynb)
+
+
+## Modélisation 
+
+La librairie [Pandas](https://pandas.pydata.org) m'a permis de stocker les données obtenues dans des dataframes facilitant leur utilisation et traitement. 
+
+```code python
+# Procedure
+
+links  = get_links(3)
+data = []
+
+for link in links[:50]:
+    try:
+        soup = get_soup(link)
+        d = get_data(soup)
+        data.append(d)
+    except:
+        pass
+
+cols = get_cols(soup)
+df = pd.DataFrame(data, columns=cols)
+df.head()
+```
+
+## Streamlit : Passons aux choses sérieuses !
+
+- Données ✅
+- Modélisation ✅
+- Création de notre application ❌  
+
+Afin de créer notre application avec Streamlit, nous devons installer streamlit via la commande :
+
+```code python
+pip install streamlit
+```
+
+L'[API](https://docs.streamlit.io/library/api-reference) de Streamlit est extrêmement riche et nous permet d'afficher pratiquement tout ce que l'on souhaite.   
+> Par exemple, pour afficher du texte, on appelera la fonction `st.write()` ou pour afficher un dataframe `st.dataframe()` 
+
+Notre objectif est de créer une application permettant à un utilisateur de comparer deux smartphones.   
+Pour ce faire, l'utilisateur devra choisir :
+1. Deux smartphones différents.
+2. Des critères de compararaison (au moins 3).
+3. Enfin, des informations conernant les deux smartphones seront affichées via un dataframe.
+
+#### 1. Le choix des smartphones
+Pour le choix des smartphones, nous allons utiliser la fonction `st.selectbox()`. Cette fonction prend en entrée une description et une sequence. Celle-ci peut être un objet de type :
+- Sequence
+- Numpy.ndarray
+- pandas.Series
+- pandas.DataFrame
+- pandas.Index
+En sortie, nous obtenons l'élément choisi par l'utilisateur.   
+
+Dans notre cas, nous allons récupérer pour le premier choix, l'ensemble des valeurs uniques pour la colonne 'Marque' ainsi que pour la colonne 'Modele'. 
+
+``` code python
+# Selectbox pour la marque
+marques = df['Marque'].unique() # L'ensemble des marques
+marque1 = st.selectbox("Marque 1", marques)
+
+# Selectbox pour le modele
+# Nous allons filtrer notre dataframe avec le choix précédent.
+modeles = df[df['marque']==m1]['modele'].sort_values().unique()
+smartphone1 = st.selectbox("Smartphone 1", smarphones)
+```
+
+#### 2. Les critères de comparaison
+En ce qui concerne le choix des critères, nous allons utiliser la fonction `multiselect()`. Celle-ci fonctionne similairement à la fonction `selectbox()` mais permet de selectionner plusieurs éléments. L'élement retourné est une liste.
+
+``` code python
+# Multiselect()
+criteres = sorted(df.columns.to_list()[2:15])
+selection = st.multiselect("Quels critères voulez-vous selectionner ?", criteres)
+```
+
+#### 3. Affichage du résultat 
+
+Une des forces de Streamlit c'est également sa communauté grandissante et active et son nombre de [composants](https://streamlit.io/components)...   
+Pour afficher la comparaison entre deux smartphones, rien de mieux qu'un graphique de type "radar".   
+Pour se faire, nous allons utiliser le composants [st-echarts](https://share.streamlit.io/andfanilo/streamlit-echarts-demo/master/app.py), developpé par [Fanilo Andrianasolo](https://twitter.com/andfanilo), qui permet de profiter de la bibliothèque [e-charts](https://echarts.apache.org/en/index.html) d'Apache directement sur note application. Rien que ça !
+
+
+## Déploiement 
+
+
+En cours d'écriture    
+Le déploiement de l'application s'est fait via Github.
+
+Pour plus d'informations, [voir la documentation officielle](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app).
+
+## Résultat 
+
+ <iframe
+    src='https://share.streamlit.io/mlaajaj/smartphone_comparison_app/main/app.py'
+    alt='demo'
+    width="100%"
+    height="100%"
+  />
+
