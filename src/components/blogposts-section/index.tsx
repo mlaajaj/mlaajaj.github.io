@@ -9,10 +9,11 @@ type Props = {
   posts: BlogPost[];
 };
 
+
 const BlogpostsSection = ({ posts }: Props) => {
   return (
     <VStack as="section" alignItems="flex-start" w="full" spacing={4}>
-      <Heading size="md">Dernier article</Heading>
+      <Heading as="h1" size="lg">Dernier article</Heading>
       <List w="full" spacing={{ base: 8, md: 2 }}>
         {posts.map((post) => (
           <ListItem key={post.slug}>
