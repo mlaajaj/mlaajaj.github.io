@@ -9,8 +9,11 @@ import courses from "@/data/courses";
 import { getRecentBlogPosts } from "@/utils/get-blog-posts";
 import { BlogPost } from "@/types/blog-post";
 import BlogpostsSection from "@/components/blogposts-section";
-import { Divider } from '@chakra-ui/react';
+import { Divider, VStack, Heading, Text, SimpleGrid } from '@chakra-ui/react';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import Song from '@/components/project/projects';
+import {data} from 'data/project_data'
+
 
 type Props = {
   videos: Video[];
@@ -22,6 +25,17 @@ const IndexPage = ({ videos, posts }: Props) => {
     <>
       <Hero />
       <Divider orientation='horizontal' />
+      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
+        <Heading size="md">Projets</Heading>
+        <Text>
+          Vous retrouverez l'ensemble de mes projets avec Python, Tableau, SQL...
+        </Text>
+      </VStack>
+        <SimpleGrid columns={2} spacing={10}>
+        {data.map((data) => (
+            <Song key={data.id} {...data} />
+        ))}
+        </SimpleGrid>
       <BlogpostsSection posts={posts} />
     </>
   );
