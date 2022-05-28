@@ -21,11 +21,11 @@ const App = ({ Component, pageProps }: AppProps) => {
           handle: "@MohamedLAAJAJ",
         }}
         openGraph={{
-          url: "https://nikolovlazar.com",
+          url: "https://mlaajaj.github.il",
           title: "Mohamed LAAJAJ - Junior Data Analyst.",
           description:
             "Junior Data Analyst",
-          locale: "en_US",
+          locale: "fr",
           images: [
             {
               url: "https://nikolovlazar.com/assets/images/social.png",
