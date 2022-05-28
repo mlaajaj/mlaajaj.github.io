@@ -20,7 +20,7 @@ export const data = [
   {
     id:3,
     name: 'Campagne Marketing',
-    genre: 'Python - Sklearn',
+    genre: 'Python',
     image: "/assets/images/marketing_campaign.png",
     url: 'https://github.com/mlaajaj/PortfolioProjects/blob/main/Projet%203%20-%20Marketing%20Analysis/Analyse_complete.ipynb',
     description:"Analyse d'une campagne marketing avec Python et sklearn",
