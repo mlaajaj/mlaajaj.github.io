@@ -77,6 +77,7 @@ const BlogPostCard = ({
 
       <Flex justifyContent="space-between" alignItems="center" mt={4}>
         <Link
+          href={`/blog/${slug}`}
           color={useColorModeValue("brand.600", "brand.400")}
           _hover={{ textDecor: "underline" }}
         >
