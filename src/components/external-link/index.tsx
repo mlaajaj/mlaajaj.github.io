@@ -14,7 +14,7 @@ const ExternalLink = ({ children, ...linkProps }: LinkProps) => {
         {...linkProps}
         alignItems="center"
         display="inline-flex"
-        color={mode('purple.500', 'purple.300')}
+        color={mode('blue.500', 'blue.300')}
         isExternal
         target="_blank"
       >
