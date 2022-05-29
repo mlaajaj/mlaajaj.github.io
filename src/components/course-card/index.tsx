@@ -58,7 +58,7 @@ const CourseCard = ({
             {image && <Image src={image} alt={title} layout="fill" />}
             {!live && progress && (
               <CircularProgress
-                color="purple.500"
+                color="blue.500"
                 size={progressSize}
                 trackColor={progressTrackColor}
                 value={progress}
@@ -91,7 +91,7 @@ const CourseCard = ({
               {!live && (
                 <LinkOverlay href={`/course/${id}/subscribe`}>
                   <HStack>
-                    <Text color="purple.500" fontSize="sm">
+                    <Text color="blue.500" fontSize="sm">
                       Get notified
                     </Text>
                     <Icon
