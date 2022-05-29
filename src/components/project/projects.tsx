@@ -14,6 +14,7 @@ const Song = ({ name, image,genre, description, url,color })  => {
     <LinkBox as="article" role="group">
     <Box
         maxW={'900px'}
+        height='380px'
         w={'full'}
         bg={useColorModeValue('white', 'gray.900')}
         boxShadow={'2xl'}
