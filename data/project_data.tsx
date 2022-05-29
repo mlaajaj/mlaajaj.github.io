@@ -13,7 +13,7 @@ export const data = [
     name: 'Web Scraping',
     genre: 'Python',
     image: "/assets/images/web_scraping.png",
-    url: 'https://github.com/mlaajaj/PortfolioProjects/blob/main/Projet_Scrapping.ipynb',
+    url: 'https://github.com/mlaajaj/Smartphone_Reviews_Scrap',
     description:"Récupération automatique de données à partir d'un site internet",
     color : "green.500"
   },
