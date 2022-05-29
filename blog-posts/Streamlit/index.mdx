@@ -44,7 +44,7 @@ Pour plus d'informations sur la récupération des données :  [Voir le Projet](
 
 La librairie [Pandas](https://pandas.pydata.org) m'a permis de stocker les données obtenues dans des dataframes facilitant leur utilisation et traitement. 
 
-```code python
+```python
 # Procedure
 
 links  = get_links(3)
@@ -71,7 +71,7 @@ df.head()
 
 Afin de créer notre application avec Streamlit, nous devons installer streamlit via la commande :
 
-```code python
+```python
 pip install streamlit
 ```
 
@@ -95,7 +95,7 @@ En sortie, nous obtenons l'élément choisi par l'utilisateur.
 
 Dans notre cas, nous allons récupérer pour le premier choix, l'ensemble des valeurs uniques pour la colonne 'Marque' ainsi que pour la colonne 'Modele'. 
 
-``` code python
+```python
 # Selectbox pour la marque
 marques = df['Marque'].unique() # L'ensemble des marques
 marque1 = st.selectbox("Marque 1", marques)
@@ -109,7 +109,7 @@ smartphone1 = st.selectbox("Smartphone 1", smarphones)
 #### 2. Les critères de comparaison
 En ce qui concerne le choix des critères, nous allons utiliser la fonction `multiselect()`. Celle-ci fonctionne similairement à la fonction `selectbox()` mais permet de selectionner plusieurs éléments. L'élement retourné est une liste.
 
-``` code python
+```python
 # Multiselect()
 criteres = sorted(df.columns.to_list()[2:15])
 selection = st.multiselect("Quels critères voulez-vous selectionner ?", criteres)
