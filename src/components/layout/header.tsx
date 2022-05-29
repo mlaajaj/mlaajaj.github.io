@@ -56,7 +56,7 @@ const Header = () => {
       >
         <NextLink href="/" passHref>
           <Link>
-          <Image src='/assets/images/mlaajaj.png' alt='Logo'   boxSize='60px' />
+          <Image src='/assets/images/mlaajaj.png' alt='Logo'   boxSize='45px' />
           </Link>
         </NextLink>
 
