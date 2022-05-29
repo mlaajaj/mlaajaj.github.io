@@ -36,7 +36,7 @@ const HeroPlay = () => {
             as={state.playing ? HiStop : HiPlay}
             w={{ base: 12, md: 8 }}
             h={{ base: 12, md: 8 }}
-            color="purple.500"
+            color="blue.500"
           />
         }
         onClick={toggle}
