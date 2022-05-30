@@ -1,13 +1,20 @@
+import Image from 'next/image';
+
 import {
     LinkBox, 
     Box,
     useColorModeValue,
-    Image,
     Stack, 
     Text, 
     LinkOverlay,
     Heading } from '@chakra-ui/react';
-    import NextLink from 'next/link';
+
+import NextLink from 'next/link';
+
+const ProjectImage = chakra(Image, {
+    baseStyle: { maxH: 120, maxW: 120 },
+    shouldForwardProp: (prop) => ['width', 'height', 'src', 'alt'].includes(prop),
+  })
     
 const Song = ({ name, image,genre, description, url,color })  => {
     return (
@@ -27,7 +34,12 @@ const Song = ({ name, image,genre, description, url,color })  => {
         mx={-6}
         mb={6}
         pos={'relative'}>
-        <Image src={image} objectFit='fill'/>
+            
+        <ProjectImage src={image}
+            width={1000}
+            height={600} 
+            layout='fill'/>
+            
         </Box>
         
         <Stack>
