@@ -88,7 +88,6 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
           <div data-language={className}>
             <chakra.pre
               className={className}
-              colorScheme='telegram'
               sx={{ ...style, backgroundColor: 'gray.50' }}
               _dark={{
                 backgroundColor: 'gray.900',
