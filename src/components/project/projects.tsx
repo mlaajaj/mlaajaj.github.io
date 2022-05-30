@@ -7,6 +7,7 @@ import {
     Stack, 
     Text, 
     LinkOverlay,
+    chakra,
     Heading } from '@chakra-ui/react';
 
 import NextLink from 'next/link';
