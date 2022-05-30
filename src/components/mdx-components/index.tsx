@@ -88,6 +88,7 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
           <div data-language={className}>
             <chakra.pre
               className={className}
+              colorScheme='telegram'
               sx={{ ...style, backgroundColor: 'gray.50' }}
               _dark={{
                 backgroundColor: 'gray.900',
@@ -211,7 +212,7 @@ const MDXComponents = {
         as="blockquote"
         role="none"
         rounded="4px"
-        status="warning"
+        status="info"
         variant="left-accent"
         {...props}
         w="unset"

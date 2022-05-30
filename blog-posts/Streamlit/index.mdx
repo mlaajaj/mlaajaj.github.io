@@ -87,7 +87,7 @@ Pour ce faire, l'utilisateur devra choisir :
 2. Des critères de compararaison (au moins 3).
 3. Enfin, des informations conernant les deux smartphones seront affichées via un dataframe.
 
-#### 1. Le choix des smartphones
+### 1. Le choix des smartphones
 
 Pour le choix des smartphones, nous allons utiliser la fonction `st.selectbox()`. Cette fonction prend en entrée une description et une sequence. Celle-ci peut être un objet de type :
 
@@ -111,7 +111,7 @@ modeles = df[df['marque']==m1]['modele'].sort_values().unique()
 smartphone1 = st.selectbox("Smartphone 1", smarphones)
 ```
 
-#### 2. Les critères de comparaison
+### 2. Les critères de comparaison
 
 En ce qui concerne le choix des critères, nous allons utiliser la fonction `multiselect()`. Celle-ci fonctionne similairement à la fonction `selectbox()` mais permet de selectionner plusieurs éléments. L'élement retourné est une liste.
 
@@ -121,7 +121,7 @@ criteres = sorted(df.columns.to_list()[2:15])
 selection = st.multiselect("Quels critères voulez-vous selectionner ?", criteres)
 ```
 
-#### 3. Affichage du résultat
+### 3. Affichage du résultat
 
 Une des forces de Streamlit c'est également sa communauté grandissante et active et son nombre de [composants](https://streamlit.io/components)...  
 Pour afficher la comparaison entre deux smartphones, rien de mieux qu'un graphique de type "radar".  
