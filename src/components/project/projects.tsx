@@ -3,10 +3,12 @@ import {
     Box,
     useColorModeValue,
     Stack, 
-    Image,
     Text, 
     LinkOverlay,
     Heading } from '@chakra-ui/react';
+
+
+import Image from 'next/image'
 
 import NextLink from 'next/link';
 
@@ -29,7 +31,7 @@ const Song = ({ name, image,genre, description, url,color })  => {
         mb={6}
         pos={'relative'}>
             
-        <Image src={image}  objectFit='fill'/>
+        <Image src={image}  objectFit='cover' width={350} height={200} layout='responsive'/>
 
             
         </Box>
