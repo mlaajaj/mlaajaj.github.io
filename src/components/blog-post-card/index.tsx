@@ -30,10 +30,11 @@ const BlogPostCard = ({
       mx="auto"
       w='100%'
       p={4}
-      rounded="lg"
-      shadow="xl"
+      rounded="xl"
       bg={useColorModeValue('white', 'gray.900')}       
       maxW="2xl"
+      border="1px" 
+      borderColor='gray.100'
     >
 
       <Flex justifyContent="space-between" alignItems="center">
