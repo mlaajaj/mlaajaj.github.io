@@ -25,7 +25,7 @@ const IndexPage = ({ videos, posts }: Props) => {
     <>
       <Hero />
       <Divider orientation='horizontal' />
-      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
+      <VStack as="section" alignItems="flex-start" w="full" spacing={7}>
         <Heading as="h1" size="lg">Projets</Heading>
         <Text>
           Vous retrouverez l'ensemble de mes projets avec Python, Tableau, SQL...
