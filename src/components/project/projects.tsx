@@ -23,7 +23,7 @@ const Song = ({ name, image,genre, description, url,color })  => {
             xl: '380px', // 80em+
           }}
           width={{
-            base: '500px', // 0-48em
+            base: '100%', // 0-48em
             md: '100%', // 48em-80em,
             xl: '100%', // 80em+
           }}
