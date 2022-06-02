@@ -31,7 +31,7 @@ const IndexPage = ({ videos, posts }: Props) => {
           Vous retrouverez l'ensemble de mes projets avec Python, Tableau, SQL...
         </Text>
       </VStack>
-        <SimpleGrid columns={[2, 1,2, 2,2,2]} spacing={10}>
+        <SimpleGrid columns={[1,1,2,2,2,2]} spacing={10}>
         {data.map((data) => (
             <Song key={data.id} {...data} />
         ))}
