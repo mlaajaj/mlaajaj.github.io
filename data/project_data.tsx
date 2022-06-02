@@ -1,6 +1,15 @@
 export const data = [
   {
     id:1,
+    name: 'Velib Scraping',
+    genre: 'Python',
+    image: "/assets/images/velib_scraping.png",
+    url: 'https://github.com/mlaajaj/VelibScraper',
+    description:"Récupération & Historisation des données Velib avec données météo ",
+    color : "green.500"
+  },
+  {
+    id:1,
     name: 'Streamlit APP',
     genre: 'Streamlit',
     image: "/assets/images/streamlit.png",
