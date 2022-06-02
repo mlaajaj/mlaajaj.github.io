@@ -21,7 +21,6 @@ const BlogPostCard = ({
 }: BlogPost) => {
   return (
     <Flex
-    p={10}
     w="full"
     alignItems="center"
     justifyContent="center"
