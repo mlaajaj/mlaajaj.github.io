@@ -17,13 +17,21 @@ const Song = ({ name, image,genre, description, url,color })  => {
     <LinkBox as="article" role="group">
     <Box
         maxW={'900px'}
-        height='380px'
-        w={'full'}
+        height={{
+            base: '380px', // 0-48em
+            md: '380px', // 48em-80em,
+            xl: '380px', // 80em+
+          }}
+          width={{
+            base: '500px', // 0-48em
+            md: '100%', // 48em-80em,
+            xl: '100%', // 80em+
+          }}
         bg={useColorModeValue('white', 'gray.900')}
-        boxShadow={'2xl'}
+        boxShadow={'md'}
         rounded={'md'}
         p={6}
-        overflow={'hidden'}>
+        overflow={'show'}>
         <Box
         bg={'gray.100'}
         mt={-6}
@@ -31,7 +39,7 @@ const Song = ({ name, image,genre, description, url,color })  => {
         mb={6}
         pos={'relative'}>
             
-        <Image src={image}  objectFit='cover' width={350} height={200} layout='responsive'/>
+        <Image src={image}  objectFit='cover' width={180} height={80} layout='responsive'/>
 
             
         </Box>
